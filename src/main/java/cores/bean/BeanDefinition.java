@@ -1,3 +1,4 @@
+package cores.bean;
 /**
  * Minimal Spring BeanDefinition Objective:
  * 1. Instantiate the metadata
@@ -10,17 +11,22 @@ public class BeanDefinition {
     private Class<?> beanClass;
 
     // Constructor
+    public BeanDefinition(String name, Class<?> beanClass) {
+        this.name = name;
+        this.beanClass = beanClass;
+    }
     public BeanDefinition(Class<?> beanClass) {
-        this.name = UUID.randomUUID().toString();
+        this.name = generateName(beanClass);
         this.beanClass = beanClass;
     }
 
-    // Getters and Setters
+    // Getters
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    private String generateName(Class<?> beanClass) {
+        String className = beanClass.getName();
+        return Character.toLowerCase(className.charAt(0)) + className.substring(1);
     }
 }

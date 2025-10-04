@@ -1,14 +1,10 @@
-package com.example.bean;
-
+import cores.bean.BeanDefinition;
+import cores.bean.BeanFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-// Import your main classes
-import com.example.BeanDefinition;
-import com.example.BeanFactory;
 
 /**
  * Tests the core functionality of the minimal BeanFactory and BeanDefinition.
